@@ -1,16 +1,19 @@
 <template>
   <div class="board">
-    <TheCell
-      class="cell"
-      v-for="(cell, key) in COUNT_CELL"
-      :key="key"
-      :position="key"
-      :is-white="Math.floor(key / 8) % 2 ? !(key % 2 === 0) : (key % 2 === 0)"
-    />
+    <template v-for="(row, i) in boardDefault">
+      <TheCell
+        v-for="(cell, j) in row"
+        :key="`${i}-${j}`"
+        :position="{i, j}"
+        :figure="boardActive[i][j]"
+        :is-white="cell !== 1"
+      />
+    </template>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import TheCell from "../organisms/TheCell";
 
 export default {
@@ -23,7 +26,19 @@ export default {
       COUNT_CELL: 64,
     }
   },
+  computed: {
+    ...mapGetters({
+      boardDefault: 'board/default',
+      boardActive: 'board/active',
+    }),
+  },
   methods: {
+    move(x, y, a, b) {
+      this.$store.commit('board/SET_MOVE', {x, y, a, b})
+    },
+    getFigure() {
+
+    },
   },
 }
 </script>

@@ -12,7 +12,7 @@ export default {
   name: "TheCell",
   props: {
     position: {
-      type: Number,
+      type: Object,
       required: true,
     },
     isWhite: {
