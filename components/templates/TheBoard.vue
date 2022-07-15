@@ -1,10 +1,11 @@
 <template>
   <div class="board">
     <TheCell
+      class="cell"
       v-for="(cell, key) in COUNT_CELL"
       :key="key"
       :position="key"
-      :is-white="key % 2 === 0"
+      :is-white="Math.floor(key / 8) % 2 ? !(key % 2 === 0) : (key % 2 === 0)"
     />
   </div>
 </template>
@@ -30,8 +31,6 @@ export default {
 <style scoped>
 .board {
   display: grid;
-  /*grid-row: 6;*/
-  /*grid-template-rows: 80vw;*/
   grid-template-columns: repeat(8, 10vw);
   grid-template-rows: repeat(8, 10vh);
   width: 80vw;
