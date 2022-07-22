@@ -48,8 +48,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(8, 10vh);
   grid-template-rows: repeat(8, 10vh);
-  width: 80vh;
-  height: 80vh;
+  width: 100%;
+  height: 100%;
   background-color: aqua;
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div class="main">
-<!--    <header class="header"></header>-->
-<!--    <div class="content">-->
+    <header class="header"></header>
+    <article class="ads"></article>
+    <nav class="nav"></nav>
+    <div class="content">
       <TheBoard/>
       <!--    <Tutorial/>-->
     </div>
-<!--    <div class="left-bar"></div>-->
-<!--    <div class="right-bar"></div>-->
-<!--    <footer class="footer"></footer>-->
+    <footer class="footer"></footer>
   </div>
 </template>
 
@@ -21,39 +21,48 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+* {
+  box-sizing: border-box;
+}
+
 .main {
   display: grid;
-  /*grid-gap: 1rem;*/
-  /*grid-template-columns: 1fr;*/
-  /*grid-template-rows: 60px 300px 150px 150px 60px;*/
-  /*grid-template-areas: "header" "content" "leftside" "rightside" "footer";*/
-  /*margin: 1rem 1rem 8rem 1rem;*/
-  /*padding: 1rem;*/
-  /*border: 5px solid gray;*/
-  align-content: center;
+  grid-template-areas:
+    "header header header"
+    "nav content ads"
+    "footer footer footer";
+  grid-template-rows: 10% 0fr 10%;
+  grid-template-columns: 10% 0fr 10%;
+  grid-gap: 1rem;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-.header {
-  grid-area: header;
-}
-.left-bar {
-  grid-area: leftside;
-}
-.content {
-  grid-area: content;
-  display: flex;
-  width: 100%;
-  height: 100%;
   align-content: center;
-  justify-content: center;
+  margin: 0;
+  height: 100vh;
+
+  .header {
+    grid-area: header;
+  }
+  .nav {
+    grid-area: nav;
+  }
+  .content {
+    grid-area: content;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+  }
+  .ads {
+    grid-area: ads;
+  }
+  .footer {
+    grid-area: footer;
+  }
 }
-.right-bar {
-  grid-area: rightside;
-}
-.footer {
-  grid-area: footer;
+
+header, footer, article, nav, div {
+  background: #ffd7005c;
 }
 </style>
