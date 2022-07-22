@@ -5,7 +5,7 @@
         v-for="(cell, j) in row"
         :key="`${i}-${j}`"
         :position="{i, j}"
-        :figure="boardActive[i][j]"
+        :figure="getFigure(i, j)"
         :is-white="cell !== 1"
       />
     </template>
@@ -36,8 +36,8 @@ export default {
     move(x, y, a, b) {
       this.$store.commit('board/SET_MOVE', {x, y, a, b})
     },
-    getFigure() {
-
+    getFigure(i, j) {
+      return this.boardActive[i][j]
     },
   },
 }
@@ -46,9 +46,9 @@ export default {
 <style scoped>
 .board {
   display: grid;
-  grid-template-columns: repeat(8, 10vw);
+  grid-template-columns: repeat(8, 10vh);
   grid-template-rows: repeat(8, 10vh);
-  width: 80vw;
+  width: 80vh;
   height: 80vh;
   background-color: aqua;
 }

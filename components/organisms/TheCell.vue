@@ -31,7 +31,7 @@ export default {
 <style scoped>
 .cell {
   display: block;
-  width: 10vw;
+  width: 10vh;
   height: 10vh;
 }
 
