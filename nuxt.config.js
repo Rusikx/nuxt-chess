@@ -37,6 +37,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     'nuxt-vite',
+    'nuxt-sass-resources-loader'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -53,6 +54,10 @@ export default {
       },
     },
   },
+
+  sassResources: [
+    '@/path/to/first-resources.sass'
+  ],
 
   vite: {
     /* options for vite */

@@ -28,18 +28,18 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .cell {
   display: block;
   width: 10vh;
   height: 10vh;
+
+  &--white {
+    background-color: white;
+  }
+
+  &--black {
+    background-color: black;
+  }
 }
-
-.cell--white {
-   background-color: white;
- }
-
-.cell--black {
-   background-color: black;
- }
 </style>

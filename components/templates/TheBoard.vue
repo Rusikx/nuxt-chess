@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .board {
   display: grid;
   grid-template-columns: repeat(8, 10vh);
