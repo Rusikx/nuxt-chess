@@ -1,5 +1,3 @@
-#Work project in <a hrref="https://rusikx.github.io/nuxt-chess/" target="_blank">https://rusikx.github.io/nuxt-chess/</a>
-
 # nuxt-chess
 
 ## Build Setup
