@@ -2,6 +2,7 @@
   "name": "nuxt-chess",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://Rusikx.github.io/nuxt-chess",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
