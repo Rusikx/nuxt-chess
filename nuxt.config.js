@@ -1,5 +1,8 @@
 export default {
   target: 'static',
+  router: {
+    base: 'https://Rusikx.github.io/nuxt-chess'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-chess',
