@@ -10,7 +10,7 @@
     "generate": "nuxt generate",
     "test": "jest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "ant-design-vue": "^1.7.8",
