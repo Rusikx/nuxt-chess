@@ -3,13 +3,17 @@
     class="cell"
     :class="{'cell--white': isWhite, 'cell--black': !isWhite}"
   >
-
+    <BaseFigure :code="1" />
   </div>
 </template>
-
 <script>
+import BaseFigure from '~/components/atoms/BaseFigure'
+
 export default {
-  name: "TheCell",
+  name: 'TheCell',
+  components: {
+    BaseFigure,
+  },
   props: {
     position: {
       type: Object,
@@ -20,8 +24,7 @@ export default {
       required: true,
     },
     figure: {
-      type: Object,
-      default: () => ({}),
+      type: Number,
       required: false,
     },
   },
