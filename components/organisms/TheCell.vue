@@ -3,7 +3,7 @@
     class="cell"
     :class="{'cell--white': isWhite, 'cell--black': !isWhite}"
   >
-    <BaseFigure :code="1" />
+    <BaseFigure :code="figure" :position="position" />
   </div>
 </template>
 <script>
@@ -42,7 +42,7 @@ export default {
   }
 
   &--black {
-    background-color: black;
+    background-color: cornflowerblue;
   }
 }
 </style>

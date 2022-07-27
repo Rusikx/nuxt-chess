@@ -1,6 +1,10 @@
 <template>
-  <div class="figure">
-    <img src="~/static/figures/bishop-white.png" alt="">
+  <div class="figure" @click="move">
+    <img
+      v-if="code"
+      :src="`../../static/figures/${figureUrl}`"
+      alt=""
+    >
   </div>
 </template>
 
@@ -10,6 +14,10 @@ export default {
   props: {
     code: {
       type: Number,
+      required: true,
+    },
+    position: {
+      type: Object,
       required: true,
     },
   },
@@ -67,9 +75,42 @@ export default {
       },
     }
   },
+  computed: {
+    figureUrl() {
+      return this.figures[this.code]?.url?.white
+    },
+    rememberPosition() {
+      return this.$store.getters['board/remember']
+    },
+    firstClick() {
+      return this.$store.getters['board/firstClick']
+    },
+  },
+  methods: {
+    move() {
+      if (this.firstClick) {
+        this.$store.commit('board/SET_REMEMBER_POSITION', {
+          a: this.position.i,
+          b: this.position.j,
+        })
+      } else {
+        this.$store.commit('board/SET_MOVE', {
+          x: this.position.i,
+          y: this.position.j,
+          a: this.rememberPosition.a,
+          b: this.rememberPosition.b,
+        })
+      }
+
+      this.$store.commit('board/SET_FIRST_CLICK', !this.firstClick)
+    },
+  },
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.figure {
+  width: 100%;
+  height: 100%;
+}
 </style>
