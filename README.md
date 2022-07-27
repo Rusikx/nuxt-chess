@@ -1,4 +1,4 @@
-# nuxt-chess
+# <a href="https://rusikx.github.io/nuxt-chess/" target="_blank">nuxt-chess</a>
 
 ## Build Setup
 
